@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Playwrite+IN:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <!-- <link rel="stylesheet" href="../static/login.css"> -->
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <form action="" method="post" class="form-con">
+        {% csrf_token %}
+
+        <div class="con1">
+            <span class="material-symbols-outlined" style="font-size: 70px; color: #7F00FF;">assignment_turned_in</span>
+            <h2>Welcome Back!</h2>
+            <h4>Stay organized. Get things done</h4>
+        </div>
+
+        <div class="con2">
+            <label for="username"><b>Username</b></label>
+
+            <div>
+                <span class="material-symbols-outlined">mail</span>
+                <input type="text" placeholder="Enter your username" name="username" id="username">
+            </div> 
+        </div>
+
+        <div class="con3">
+            <label for="password"><b>Password</b></label>
+
+            <div>
+                <span class="material-symbols-outlined">lock</span>
+                <input type="password" placeholder="Enter your password" name="password" id="password">
+            </div>
+        </div>
+
+        <div class="con4">
+            <button type="submit"><b>Log In</b><span class="material-symbols-outlined" style="margin-left: 5px;">login</span></button>
+        </div>
+
+        <div class="con5" style="display: flex; align-items: center; justify-content: center;">
+            <h4 style="color: grey;">Don't have an account?<a href="{% url 'signup' %}" style="margin-left: 5px; text-decoration: none; color: #7F00FF;">Sign Up</a></h4>
+        </div>
+    </form>
+
+
+    {% if error %}
+    <script>
+        window.onload = function() 
+        {
+            alert("{{ error }}");
+        };
+    </script>
+    {% endif %}
+</body>
+</html>

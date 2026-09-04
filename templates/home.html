@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=person" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    
+    <!-- <link rel="stylesheet" href=""> -->
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <script src="{% static 'home.js' %}" defer></script>
+
+    <title>To-Do List App</title>
+</head>
+<body>
+    {% csrf_token %}
+    <header>
+        <div class="con1">
+            <span class="material-symbols-outlined" style="font-size: 50px; color: white; margin-right: 10px;">assignment_turned_in</span>
+            <h3><b></b>My To-Do List</h3>
+        </div>
+        <div class="con2">
+            <span class="material-symbols-outlined profile-icon">person</span>
+            <span class="profile-name">Hi, {{ request.user.username }}</span>
+        </div>
+    </header>
+
+
+    
+    <div class="main-con">
+        <div class="con1">
+            <div>   
+                <h2>Your Tasks</h2>
+                <h4>Stay organized and get things done!</h4>
+            </div>
+            <input type="text" placeholder="What do you need to do?" id="task-input">
+            <button id="add-task">Add Task</button>
+        </div>
+        <div class="con2">
+            <select id="task-filter">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+            </select>
+            <button id="search-task"><span class="material-symbols-outlined">search</span>Search</button>
+        </div>
+        <div class="con3">
+            <div>
+                <h3>All</h3>
+                <span id="all-count" style="background-color: blue;">0</span>
+            </div>
+            <div>
+                <h3>Completed</h3>
+                <span id="completed-count" style="background-color: green;">0</span>
+            </div>
+            <div>
+                <h3>Pending</h3>
+                <span id="pending-count" style="background-color: red;">0</span>
+            </div>
+        </div>
+        <div class="con4" id="task-container">
+            <!-- Tasks will be added here by JavaScript -->
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="tasks">
+    <input type="checkbox" value="completed" class="check-box">
+    <h3>Learn basics of C</h3>
+    <div>
+        <button style="border: 2px solid #FFBF00;color: #FFBF00;background-color: white;"><span class="material-symbols-outlined" style="margin-right: 5px;">edit</span>Edit</button>
+        <button style="border: 2px solid red;color: red;background-color: white;"><span class="material-symbols-outlined" style="margin-right: 5px;">delete</span>Delete</button> 
+    </div>
+</div> -->
