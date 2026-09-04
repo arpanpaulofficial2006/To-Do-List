@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-pzzr!*uut2-2yy*y5a56#el+-^xs9(%pls5+6q59-7f@ayd&em
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "todolist-omega-rust.vercel.app",
+]
 
 
 # Application definition
