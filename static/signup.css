@@ -6,7 +6,7 @@ body
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    background-image: url(./images/background-1.png);
+    background-image: url('/static/images/background-1.png');
     background-position: center;
     background-attachment: fixed;
 }
